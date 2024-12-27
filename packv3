@@ -1,4 +1,4 @@
--- Made by ViniVX. Rizz script pack v2
+-- Made by ViniVX. Rizz script pack v3
 -- Emote menu , to open - Infinite Yield - Slow Mo emotes Hold e to use - system broken - baseplate extended.
 
 local IsStudio = false
@@ -674,3 +674,4 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBr
 loadstring(game:HttpGet("https://raw.githubusercontent.com/unreliqious/Roblox/refs/heads/main/Flashback-Rewind"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/platinumicy/unsuspend/refs/heads/main/unsuspend"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/unreliqious/Roblox/refs/heads/main/Facefuck"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/platinum-ViniVX/mic-up-script-pack/refs/heads/main/jerk"))()
