@@ -675,4 +675,4 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/platinum-ViniVX/mic-u
 loadstring(game:HttpGet("https://raw.githubusercontent.com/platinum-ViniVX/mic-up-script-pack/refs/heads/main/unsuspend"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/unreliqious/Roblox/refs/heads/main/Facefuck"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/platinum-ViniVX/mic-up-script-pack/refs/heads/main/jerk"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CITY512/scripts/main/freeanims.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/platinum-ViniVX/mic-up-script-pack/refs/heads/main/FE%20anims"))()
