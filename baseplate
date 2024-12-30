@@ -1,0 +1,127 @@
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = playerGui
+screenGui.ResetOnSpawn = false  -- Make sure the GUI doesn't disappear on respawn
+
+local mainFrame = Instance.new("Frame")
+mainFrame.Size = UDim2.new(0, 200, 0, 100)  -- Adjusted size (200x100)
+mainFrame.Position = UDim2.new(0.5, -100, 0.1, 0)  -- Centered horizontally near the top
+mainFrame.BackgroundColor3 = Color3.new(0, 0, 0)  -- Black background for the entire frame
+mainFrame.Parent = screenGui
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 12)  -- Rounded corners
+UICorner.Parent = mainFrame
+
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(1, 0, 0.3, 0)  -- Occupies the top 30% of the frame
+textLabel.Position = UDim2.new(0, 0, 0, 0)  -- Placed at the top of the frame
+textLabel.BackgroundTransparency = 1  -- Transparent background
+textLabel.Text = "Script Made By GiantBigNose"
+textLabel.TextColor3 = Color3.new(1, 1, 1)  -- White text
+textLabel.TextScaled = true  -- Scales the text to fit
+textLabel.Font = Enum.Font.GothamBold
+textLabel.Parent = mainFrame
+
+local toggleButton = Instance.new("TextButton")
+toggleButton.Size = UDim2.new(1, 0, 0.7, 0)  -- Occupies the bottom 70% of the frame
+toggleButton.Position = UDim2.new(0, 0, 0.3, 0)  -- Placed below the text label
+toggleButton.Text = "Off"  -- Default text is "Off"
+toggleButton.BackgroundColor3 = Color3.new(1, 0, 0)  -- Red background for "Off"
+toggleButton.TextColor3 = Color3.new(1, 1, 1)  -- White text
+toggleButton.TextScaled = true
+toggleButton.Font = Enum.Font.GothamBold
+toggleButton.Parent = mainFrame
+
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Thickness = 2  -- Thickness of the border
+UIStroke.Color = Color3.new(0, 0, 0)  -- Black border
+UIStroke.Parent = toggleButton
+
+local baseplates = {}
+for X = -10000, 10000, 512 do
+    for Z = -10000, 10000, 512 do
+        local P = Instance.new("Part")
+        P.Anchored = true
+        P.Locked = true
+        P.Size = Vector3.new(512, 1, 512)  -- Set height to 1 (same as original)
+        P.CFrame = CFrame.new(X, -0.5, Z)  -- Lowered slightly to align with the original
+
+        -- Set the color and material to match the original baseplate's darker grey
+        P.Color = Color3.fromRGB(50, 50, 50)  -- Darker grey for the asphalt
+        P.Material = Enum.Material.Asphalt  -- Asphalt material for road-like surface
+        P.Transparency = 1  -- Set them invisible initially
+        P.CanCollide = false  -- Disable collisions initially
+
+        P.Parent = game.Workspace
+
+        table.insert(baseplates, P)  -- Store the part in the table
+    end
+end
+
+local function toggleBaseplate()
+    -- Toggle baseplates' visibility and collisions
+    for _, part in pairs(baseplates) do
+        if part.Transparency == 0 then
+            part.Transparency = 1  -- Make the part invisible
+            part.CanCollide = false  -- Disable collisions
+        else
+            part.Transparency = 0  -- Make the part visible
+            part.CanCollide = true  -- Enable collisions
+        end
+    end
+
+    -- Toggle between red and green button color
+    if toggleButton.Text == "Off" then
+        toggleButton.BackgroundColor3 = Color3.new(0, 1, 0)  -- Green background for "On"
+        toggleButton.Text = "On"  -- Change text to "On"
+    else
+        toggleButton.BackgroundColor3 = Color3.new(1, 0, 0)  -- Red background for "Off"
+        toggleButton.Text = "Off"  -- Change text to "Off"
+    end
+end
+
+toggleButton.MouseButton1Click:Connect(function()
+    toggleBaseplate()
+end)
+
+-- Handle dragging logic for smoother dragging of the whole frame
+local dragging = false
+local dragInput = nil
+local dragStart = nil
+local startPos = nil
+local userInputService = game:GetService("UserInputService")
+
+-- Function to update the button's position while dragging
+local function updateInput(input)
+    local delta = input.Position - dragStart
+    mainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+mainFrame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = input.Position
+        startPos = mainFrame.Position
+
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+mainFrame.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+
+userInputService.InputChanged:Connect(function(input)
+    if dragging and input == dragInput then
+        updateInput(input)
+    end
+end)
