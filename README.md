@@ -20,6 +20,7 @@ download the presets then put those in the workspace folder in your executor❗
  - every emote (press , to open menu + DOWNLOAD EMOTE PRESET)
  - head bang (press z to activate)
  - rewind script (press c to activate,used for REWINDING your movement -THIS IS NOT A REVERSE-)
+ - invisble script
 
    binds for emote/anims/other
 
