@@ -20,7 +20,7 @@ download the presets then put those in the workspace folder in your executor❗
  - every emote (press , to open menu + DOWNLOAD EMOTE PRESET)
  - head bang (press z to activate)
  - rewind script (press c to activate,used for REWINDING your movement -THIS IS NOT A REVERSE-)
- - invisble script
+ - invisble script (if cannot tell if your invis, press shiftlock and if your invis it should so the void)
 
    binds for emote/anims/other
 
@@ -34,5 +34,7 @@ download the presets then put those in the workspace folder in your executor❗
    -V is for walking around with an emote (you could be MJ)
    -X is to stop the walking emote
    -U is for bringing your emote back in reg motion (going from reverse to reg)
+
+   preset download in discord (wont expire) --> https://discord.gg/dFx3aS7nyy
 
    -im not responsible for anyone that gets banned using this pack-
