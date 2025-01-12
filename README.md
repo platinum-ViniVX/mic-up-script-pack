@@ -1,8 +1,10 @@
 this is just a mic up/ roblox rizz script pack
-this doesnt have to be in mic up! any other vc games works
+this doesnt have to be in mic up! any other vc games works🔉
+
+--paid script--
 
 
---made by vinivx--
+--⚡made by vinivx⚡--
 
 -- use at own risk --
 
