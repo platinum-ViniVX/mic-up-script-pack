@@ -8,7 +8,7 @@ this doesnt have to be in mic up! any other vc games works🔉
 
 -- use at own risk --
 
- make sure you downloaded the presets for this script to get the favourited emotes + infinite yield binds⭐
+ make sure you downloaded the presets for this script to get the favourited emotes + infinite yield binds⭐ (scroll down to get download)
 
 download the presets then put those in the workspace folder in your executor❗
 
