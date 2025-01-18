@@ -23,6 +23,7 @@ download the presets then put those in the workspace folder in your executor❗
  - head bang (press z to activate)
  - rewind script (press c to activate,used for REWINDING your movement -THIS IS NOT A REVERSE-)
  - invisble script (if cannot tell if your invis, press shiftlock and if your invis it should so the void)
+ - side to side script (makes you go side to side- good for fast beats)
 
    binds for emote/anims/other
 
