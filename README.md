@@ -1,3 +1,12 @@
+# This project is not getting updates no more, however i'll be releasing some source codes from these scripts.
+
+
+
+
+
+
+
+
 this is just a mic up/ roblox rizz/ troll script pack
 this doesnt have to be in mic up! any other vc games works🔉
 
