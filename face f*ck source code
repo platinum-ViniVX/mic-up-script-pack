@@ -1,0 +1,80 @@
+--deobfuscated by giv5, enjoy
+
+local r1_1 = game:GetService("Players")
+local r5_1 = game:GetService("UserInputService")
+local r6_1 = function()
+  -- line: [0.0, 0.0] id: 2
+  local r2_2, r3_2, r4_2 = pairs(game.Players:GetPlayers())
+  if r6_2 ~= upval_0 then
+    if not r6_2.Character then
+      local r7_2 = r6_2.Character:FindFirstChild("HumanoidRootPart")
+      if not r7_2 then
+        if upval_0.Character.HumanoidRootPart.Position - r6_2.Character.HumanoidRootPart.Position.magnitude < math.huge then
+        end
+      end
+    end
+  end
+  for r5_2, r6_2 in r2_2 do
+    return r6_2
+end
+local r7_1 = function()
+  -- line: [0.0, 0.0] id: 3
+  upval_0 = not upval_0
+  if not upval_0 then
+    local r0_3 = upval_1()
+    if not r0_3 then
+      if upval_2.Character.Humanoid.PlatformStand == false then
+        upval_2.Character.Humanoid.PlatformStand = true
+        local r3_3 = function()
+          -- line: [0.0, 0.0] id: 4
+        end
+        task.wait()
+        if upval_0.Character.Humanoid.PlatformStand == false then
+          upval_1 = false
+          if not upval_2 then
+            local r1_4 = CFrame.new(upval_2)
+            if r1_4 then
+            end
+          end
+          upval_0.Character.HumanoidRootPart.CFrame = upval_3
+          return
+        end
+        spawn(r3_3)
+        upval_3 = true
+        local r3_3 = function()
+          -- line: [0.0, 0.0] id: 5
+        end
+        if not upval_0 then
+          local r1_5 = game:GetService("RunService")
+          r1_5.Stepped:wait()
+          if not upval_0 then
+            local r2_5 = Vector3.new(0, 0, 0)
+            upval_1.Character.HumanoidRootPart.Velocity = r2_5
+            local r6_5 = math.sin(0 + 0 + 1.0 * upval_3)
+            local r3_5 = CFrame.new(0, 1.0, -0.5 + r6_5 * 0.5)
+            local r5_5 = math.rad(180.0)
+            r3_5 = CFrame.Angles(0, r5_5, 0)
+            upval_1.Character.HumanoidRootPart.CFrame = upval_2.Character.Head.CFrame * r3_5 * r3_5
+            upval_4 = upval_2.Character.HumanoidRootPart.Position
+          end
+          return
+        end
+        spawn(r3_3)
+      end
+    end
+  end
+  upval_2.Character.Humanoid.PlatformStand = false
+  return
+end
+local r10_1 = function(r0_6)
+  -- line: [0.0, 0.0] id: 6
+  if r0_6.KeyCode == Enum.KeyCode.Z then
+    local r1_6 = upval_0:GetFocusedTextBox()
+    if r1_6 then
+      upval_1()
+    end
+  end
+  return
+end
+r5_1.InputBegan:Connect(r10_1)
+return
