@@ -1,0 +1,79 @@
+--deobfuscated by giv5, enjoy
+
+local r2_1 = game:GetService("Players")
+local r7_1 = function(r0_2)
+  -- line: [0.0, 0.0] id: 2
+  local r1_2 = upval_0.Character:WaitForChild("Humanoid")
+  local r2_2, r3_2, r4_2 = pairs(r1_2:GetPlayingAnimationTracks())
+  r6_2:Stop()
+  for r5_2, r6_2 in r2_2 do
+    local r2_2, r3_2, r4_2 = pairs(r0_2.Character.Humanoid:GetPlayingAnimationTracks())
+    local r7_2 = r1_2:LoadAnimation(r6_2.Animation)
+    r7_2:Play()
+    r7_2:AdjustWeight(9000000000.0)
+    r7_2:AdjustSpeed(r6_2.Speed)
+    r7_2.TimePosition = r6_2.TimePosition
+    local r9_2 = function()
+      -- line: [0.0, 0.0] id: 3
+      upval_0.Stopped:Wait()
+      upval_1:Stop()
+      upval_1:Destroy()
+      return
+    end
+    spawn(r9_2)
+    for r5_2, r6_2 in r2_2 do
+      return
+end
+local r7_1 = function()
+  -- line: [0.0, 0.0] id: 5
+  local r3_5 = game:GetService("Players")
+  local r2_5, r3_5, r4_5 = pairs(r3_5:GetPlayers())
+  if r6_5 ~= upval_0 then
+    if not r6_5.Character then
+      local r7_5 = r6_5.Character:FindFirstChild("HumanoidRootPart")
+      if not r7_5 then
+        if r6_5.Character.HumanoidRootPart.Position - upval_0.Character.HumanoidRootPart.Position.magnitude < math.huge then
+        end
+      end
+    end
+  end
+  for r5_5, r6_5 in r2_5 do
+    upval_1 = r6_5
+    return
+end
+r7_1 = game:GetService("UserInputService")
+local r9_1 = function(r0_4, r1_4)
+  -- line: [0.0, 0.0] id: 4
+  if not upval_0 then
+    if r1_4 then
+      if r0_4.KeyCode == Enum.KeyCode[upval_1] then
+        upval_2 = not upval_2
+        print("Toggle: ", upval_2)
+        if not upval_2 then
+          upval_3.FindClosestPlayer()
+          print("Selected Player: ", upval_4)
+        end
+        local r3_4 = upval_5.Character:WaitForChild("Humanoid")
+        local r2_4, r3_4, r4_4 = pairs(r3_4:GetPlayingAnimationTracks())
+        r6_4:Stop()
+        for r5_4, r6_4 in r2_4 do
+        end
+        if r0_4.KeyCode == upval_6 then
+          r2_4 = upval_5.Character:WaitForChild("HumanoidRootPart")
+          upval_5.Character.Humanoid.Health = 0
+          r3_4 = upval_5.CharacterAdded:Wait()
+          r3_4 = r3_4:WaitForChild("HumanoidRootPart")
+          r3_4.CFrame = r2_4.CFrame
+        end
+      end
+    end
+    return
+end
+r7_1.InputBegan:Connect(r9_1)
+end
+end
+task.wait()
+if not false then
+  if not nil then
+    r6_1.CopyAnimations(nil)
+    return
